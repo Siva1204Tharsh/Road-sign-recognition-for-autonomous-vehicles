@@ -1,1 +1,3 @@
-## Star this repo if you liked it or if you find it useful vvvvvvv
+from PyQt5 import QtCore, QtGui, QtWidgets
+from keras.models import  Sequential,load_model
+from keras.layers import Dense,Conv2D,MaxPooling2D,Flatten,Dropout,BatchNormalization,Activation,Input
