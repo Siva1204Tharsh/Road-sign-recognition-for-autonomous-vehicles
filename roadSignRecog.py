@@ -202,7 +202,7 @@ class Ui_MainWindow(object):
 
 
         history = model.fit(X_train, y_train, batch_size=32, epochs=5, validation_data=(X_test, y_test))
-        model.save("model.h5") 
+        model.save("model.h5") #save the model
 
         plt.figure(0)
         plt.plot(history.history['accuracy'], label='training accuracy')
