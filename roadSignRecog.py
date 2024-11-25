@@ -165,7 +165,7 @@ class Ui_MainWindow(object):
             self.imageLbl.setAlignment(QtCore.Qt.AlignCenter) # Align the label to center
 
     def classifyFunction(self):
-        model = load_model('my_model.h5')
+        model = load_model('model.h5')
         print("Loaded model from disk")
         path2=self.file
         print(path2)
@@ -175,7 +175,7 @@ class Ui_MainWindow(object):
         test_image = np.array(test_image)
 
         result = model.predict(test_image)[0]
-        predicted_class_index = result.argmax()
+        predicted_class_index = result.argmax() # Get the index of the predicted class with the highest probability
         sign = classs[predicted_class_index]
         print(sign)
         self.textEdit.setText(sign)
@@ -202,7 +202,7 @@ class Ui_MainWindow(object):
 
 
         history = model.fit(X_train, y_train, batch_size=32, epochs=5, validation_data=(X_test, y_test))
-        model.save("my_model_new.h5")
+        model.save("model.h5") 
 
         plt.figure(0)
         plt.plot(history.history['accuracy'], label='training accuracy')
