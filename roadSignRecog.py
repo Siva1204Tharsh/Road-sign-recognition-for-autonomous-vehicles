@@ -87,7 +87,7 @@ X_train,X_test,y_train,y_test=train_test_split(data,labels,test_size=0.2,random_
 ##print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 
 #Converting the labels into one hot encoding
-y_train=to_categorical(y_train,43)
+y_train=to_categorical(y_train,43) 
 y_test=to_categorical(y_test,43)
 
 #Class - 43
